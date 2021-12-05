@@ -8,6 +8,7 @@ import uuid
 
 class Project(models.Model):
     title = models.CharField(max_length=50)
+    author = models.CharField(max_length=50, blank=True, null=True, default="I_Am_Flow")
     description = models.TextField(null=True, blank=True)
     featured_image = models.ImageField(null=True, blank=True, default="default.jpg")
     demo_link = models.CharField(max_length=2000, null=True, blank=True)
