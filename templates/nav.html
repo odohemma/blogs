@@ -17,8 +17,19 @@
           <li class="header__menuItem"><a href="{% url 'projects' %}">Projects</a></li>
           <li class="header__menuItem"><a href="{% url 'create_project' %}">Create Project</a></li>
           <li class="header__menuItem"><a href="inbox.html">Inbox</a></li>
+
+          {% if user.is_authenticated %}
           <li class="header__menuItem"><a href="account.html">My Account</a></li>
-          <li class="header__menuItem"><a href="login.html" class="btn btn--sub">Login/Sign Up</a></li>
+          {% endif %}
+
+          {% if user.is_authenticated %}
+          <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+          <li class="header__menuItem"><a href="{% url 'password_change' %}" class="btn btn--sub">Change Password</a></li>
+          <li class="header__menuItem"><a href="{% url 'user_confirm_delete' user.id %}" class="btn btn--sub">Delete Account</a></li>
+          {% else %}
+          <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login/Sign Up</a></li>
+          {% endif %}
+
         </ul>
       </nav>
     </div>

@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'users',
 
     'crispy_forms',
-    # "bootstrap4",
+    "bootstrap4",
     'bootstrap_datepicker_plus',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -154,5 +155,5 @@ BOOTSTRAP4 = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'projects'
+LOGOUT_REDIRECT_URL = 'projects'

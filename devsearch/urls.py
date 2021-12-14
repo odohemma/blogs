@@ -29,8 +29,8 @@ urlpatterns = [
 
     path('register/', RegistrationView.as_view(), name='register'),
     path('profile/', ProfileView.as_view(), name='profile'),
-    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('users/login/', auth_views.LoginView.as_view(), name='login'),
+    path('users/logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     path('<int:pk>/delete', UserDelete.as_view(), name='user_confirm_delete'),
 

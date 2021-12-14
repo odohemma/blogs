@@ -4,6 +4,8 @@ from .forms import ProjectForm
 
 from .models import Project
 
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -17,6 +19,8 @@ def project(request, pk):
     context = {'project':projectobj}
     return render(request, 'singleproject.html', context)
 
+
+@login_required(login_url='/users/login/')
 def create_project(request):
     form = ProjectForm()
 

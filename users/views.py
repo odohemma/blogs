@@ -48,5 +48,5 @@ class ProfileView(UpdateView):
 
 class UserDelete(DeleteView):
     model = get_user_model()
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('projects')
     template_name = 'registration/user_confirm_delete.html'
